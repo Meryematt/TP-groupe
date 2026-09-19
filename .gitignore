@@ -1,0 +1,27 @@
+# Environnements virtuels Python
+.venv/
+venv/
+env/
+
+# Fichiers compilés Python
+__pycache__/
+*.pyc
+*.pyo
+
+# Variables d'environnement et secrets (identifiants BDD, clés API...)
+.env
+.env.local
+
+# Fichiers macOS
+.DS_Store
+
+# Config VS Code (optionnel — décommente si tu ne veux pas la partager)
+# .vscode/
+
+# Dépendances / build (si applicable)
+*.egg-info/
+build/
+dist/
+
+# Logs
+*.log
