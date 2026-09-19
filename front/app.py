@@ -4,7 +4,7 @@ import pandas as pd
 
 st.set_page_config(layout="wide")
 
-API_URL = "http://127.0.0.1:8000"
+API_URL = "http://127.0.0.1:8001"
 
 st.title("**Dashboard KPI Ventes - NordCommerce**")
 
@@ -49,17 +49,6 @@ def get_ventes(url : str, params : dict):
     response.raise_for_status()
     return response.json()
 
-# if st.button("Afficher les ventes"):
-#     try:
-#         ventes = get_ventes(API_URL)
-#         if ventes:
-#             df = pd.DataFrame(ventes)
-#             st.dataframe(df)
-#         else:
-#             st.info("Aucune vente à afficher.")
-#     except:
-#         pass
-
 
 @st.cache_data(ttl="30s")
 def ca_total(url : str, params : dict):
@@ -91,11 +80,6 @@ def panier_moyen(url : str, params : dict):
     response.raise_for_status()
     return response.json()
 
-# @st.cache_data(ttl="30s")
-# def top_vendeurs(url : str):
-#     response = requests.get(f"{url}/kpi/top_vendeurs")
-#     response.raise_for_status()
-#     return response.json()
 
 @st.cache_data(ttl="30s")
 def top1_vendeurs(url : str, params : dict):
